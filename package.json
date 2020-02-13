@@ -1,0 +1,24 @@
+{
+  "name": "inseego-exercise-min",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "cucumber": "^6.0.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cucumber": "cucumber-js ./features -r ./steps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LIHTU/inseego-exercise.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LIHTU/inseego-exercise/issues"
+  },
+  "homepage": "https://github.com/LIHTU/inseego-exercise#readme"
+}
