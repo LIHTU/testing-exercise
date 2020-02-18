@@ -22,17 +22,12 @@ let answer = 0;
 
 
 // Finished example step
-Given('the numbers {int} and {int}', function (x, y, callback) {
+Given('the numbers {int} and {int}', function (x, y) {
     calculator = new Calculator(x, y);
-    callback(); // callback is the original way of dealing with non-blocking asynchronous operations in Node.js 
 });
 When('they are added together', function () {
-    // Write code here that turns the phrase above into concrete actions
-    // callback(null, 'pending'); // if using 'callback()', be sure to include as param in invoking fn
     calculator.add()
 });
 Then('the result should be {int}', function (expected) {
-    // Write code here that turns the phrase above into concrete actions
-    // callback(null, 'pending');
     assert.equal(calculator.getResult(), expected)
 });

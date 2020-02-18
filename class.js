@@ -2,7 +2,16 @@ var fs = require('fs');
 
 
 // users
+class User {
+    // todo: handle id and company
+    constructor(type) {
+        this.type = type;
+    }
 
+    getType() {
+        return this.type;
+    }
+}
 
 // orders
 class Order {
@@ -23,7 +32,7 @@ class Order {
 const orderIdGen = OrderIdGenerator();
 
 var orders = [];
-const carPartsOrder = new Order(orderIdGen.next().value, sam.id, "1.0");
+// const carPartsOrder = new Order(orderIdGen.next().value, sam.id, "1.0");
 
 function* OrderIdGenerator() {
     var i = 0;
@@ -66,3 +75,5 @@ if (!fs.existsSync('./data/companies.json')){
         console.log('The companies.json file has been saved!');
     });
 }
+
+module.export = User;
