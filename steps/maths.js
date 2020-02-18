@@ -6,33 +6,33 @@ let calculator;
 
 let answer = 0;
 
-Given('the numbers {int} and {int}', function (x, y, callback) {
-    calculator = new Calculator(x, y);
-    callback();
-});
-
-When('they are added together', function (callback) {
-    // Write code here that turns the phrase above into concrete actions
-    callback(null, 'pending');
-});
-
-Then('should the result be {int}', function (int, callback) {
-    // Write code here that turns the phrase above into concrete actions
-    callback(null, 'pending');
-});
-
-// Given('I start with {int}', function (input) {
+// Empty Example step
+// Given('the numbers {int} and {int}', function (int, int2, callback) {
 //     // Write code here that turns the phrase above into concrete actions
-//     // calculator = new Calculator();    
 //     callback(null, 'pending');
 // });
-// When('I add {int}', function (input) {
+// When('they are added together', function (callback) {
 //     // Write code here that turns the phrase above into concrete actions
-//     // callback(null, 'pending');
-//     answer = input + answer;
+//     callback(null, 'pending');
 // });
-// Then('I end up with {int}', function (input) {
+// Then('should the result be {int}', function (int, callback) {
 //     // Write code here that turns the phrase above into concrete actions
-//     // callback(null, 'pending');
-//     assert.equal(answer, input);
+//     callback(null, 'pending');
 // });
+
+
+// Finished example step
+Given('the numbers {int} and {int}', function (x, y, callback) {
+    calculator = new Calculator(x, y);
+    callback(); // callback is the original way of dealing with non-blocking asynchronous operations in Node.js 
+});
+When('they are added together', function () {
+    // Write code here that turns the phrase above into concrete actions
+    // callback(null, 'pending'); // if using 'callback()', be sure to include as param in invoking fn
+    calculator.add()
+});
+Then('the result should be {int}', function (expected) {
+    // Write code here that turns the phrase above into concrete actions
+    // callback(null, 'pending');
+    assert.equal(calculator.getResult(), expected)
+});
