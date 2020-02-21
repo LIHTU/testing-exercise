@@ -6,8 +6,6 @@ var Order = require('../models/order.js');
 const ordersData = require("../data/orders.json");
 const users = require("../data/users.json");
 
-
-
 // run with `node Generators/cartFeatureGen.js`;
 
 // TODO: handle case where order has no products and user checks out
