@@ -4,6 +4,8 @@ const User = require('../models/user.js');
 // const Cart = require('../models/cart.js');
 const orders = require('../data/orders.json');
 
+let cart = {};
+
 Given('a cart has {int} products', function(startQuantity) {
     // user = new User('basic')
     // callback(null, 'pending');
@@ -15,12 +17,11 @@ When('I add an item to the cart', function () {
     cart.quan += 1;
 });
 Then('I should see {string}', function (expected) {
-    // callback(null, 'pending');
+    var successMsg = "Item successfully added to cart";
+    var failedMsg = "Sorry! Your cart already has the max number of items";
     if (cart.quan <= 5) {
-        var message = "Success";
-        assert.equal(message, expected);
+        assert.equal(successMsg, expected);
     } else {
-        var message = "Failed";
-        assert.equal(message, expected);
+        assert.equal(failedMsg, expected);
     }
 });

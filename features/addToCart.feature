@@ -5,8 +5,9 @@ Feature: Add Item to Cart
         Then I should see <message>
 
         Examples:
-            | startQuantity | message   |
-            | 0             | "Success" |
-            | 1             | "Success" |
-            | 5             | "Failed"  |
-            | 6             | "Failed"  |
+            | startQuantity | message                                                 |
+            | 0             | "Item successfully added to cart"                       |
+            | 1             | "Item successfully added to cart"                       |
+            | 4             | "Item successfully added to cart"                       |
+            | 5             | "Sorry! Your cart already has the max number of items"  |
+            | 6             | "Sorry! Your cart already has the max number of items"  |
