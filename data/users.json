@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "companyId": 1,
+        "type": "basic"
+    },
+    {
+        "id": 2,
+        "companyId": 2,
+        "type": "basic"
+    },
+    {
+        "id": 3,
+        "companyId": 1,
+        "type": "special"
+    },
+    {
+        "id": 4,
+        "companyId": 2,
+        "type": "special"
+    },
+    {
+        "id": 3,
+        "companyId": 1,
+        "type": "super"
+    },
+    {
+        "id": 4,
+        "companyId": 2,
+        "type": "super"
+    }
+]

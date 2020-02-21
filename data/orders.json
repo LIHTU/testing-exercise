@@ -1,0 +1,57 @@
+[
+    {
+        "name": "2 products",
+        "id": 1,
+        "userId": 1,
+        "products": [
+            {
+                "id": 1,
+                "sku": "gre-sm-bts"
+            },
+            {
+                "id": 2,
+                "sku": "gre-md-bts"
+            }
+        ],
+        "codebaseVersion": 1
+    },
+    {
+        "name": "0 products",
+        "id": 2,
+        "userId": 1,
+        "products": [],
+        "codebaseVersion": 1
+    },
+    {
+        "name": "6 products",
+        "id": 1,
+        "userId": 1,
+        "products": [
+            {
+                "id": 1,
+                "sku": "gre-sm-bts"
+            },
+            {
+                "id": 2,
+                "sku": "gre-md-bts"
+            },
+            {
+                "id": 3,
+                "sku": "gre-lg-bts"
+            },
+            {
+                "id": 4,
+                "sku": "rd-sm-bts"
+            },
+            {
+                "id": 5,
+                "sku": "rd-md-bts"
+            },
+            {
+                "id": 6,
+                "sku": "-lg-bts"
+            }
+        ],
+        "codebaseVersion": 1
+    }
+]

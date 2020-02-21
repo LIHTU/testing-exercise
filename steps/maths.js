@@ -1,6 +1,6 @@
 const { Given, Then, When } = require('cucumber');
 const assert = require('assert');
-const Calculator = require('../lib/calculator.js');
+const Calculator = require('../models/calculator.js');
 
 let calculator;
 
@@ -31,3 +31,23 @@ When('they are added together', function () {
 Then('the result should be {int}', function (expected) {
     assert.equal(calculator.getResult(), expected)
 });
+
+var addOne = (n) => {return n + 1};
+
+let num;
+let cartNum;
+Given('number {int}', function(n) {
+    num = n;
+});
+When('1 is added', function(){
+    cartNum = addOne(num);
+})
+Then('it should be less than 6', function() {
+    var message = 'fail';
+    if (cartNum > 0 && cartNum < 6) {
+        message = 'success'
+        assert.equal(message, 'success');
+    } else {
+        assert.equal(message, 'fail');
+    }
+})
