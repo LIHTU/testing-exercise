@@ -1,10 +1,12 @@
-# You could procedurally generate this file from order data with node.
-
 Feature: Add Item to Cart
-    Scenario: Order product quantity
-        Given codebase is version 1
-        And user is type basic
-        When user adds product to cart
-        Then cart should have at least 1 products
-        And cart should have no more than 5 products
+    Scenario Outline: Don't let cart overfill
+        Given a cart has <startQuantity> products
+        When I add an item to the cart
+        Then I should see <message>
 
+        Examples:
+            | startQuantity | message   |
+            | 0             | "Success" |
+            | 1             | "Success" |
+            | 5             | "Failed"  |
+            | 6             | "Failed"  |

@@ -3,10 +3,10 @@ class Cart {
     // product min 1, max 5
     products = []; 
 
-    constructor(userId, codebaseVersion) {
-        this.userId = userId;
-        this.codebaseVersion = codebaseVersion;
-    }
+    // constructor(userId, codebaseVersion) {
+    //     this.userId = userId;
+    //     this.codebaseVersion = codebaseVersion;
+    // }
 
     addProduct(product) {
         this.products.push(product);

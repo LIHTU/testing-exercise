@@ -1,36 +1,26 @@
 const { Given, Then, When } = require('cucumber');
 const assert = require('assert');
 const User = require('../models/user.js');
-const Cart = require('../models/cart.js');
+// const Cart = require('../models/cart.js');
 const orders = require('../data/orders.json');
 
-let cart;
-let codebaseVesrion;
-
-// Feature: Add Item to Cart
-//     Scenario: Order product quantity
-//         Given codebase is version 1
-//         And user is type basic
-//         When user adds product to cart
-//         Then cart should have at least 1 products
-//         And cart should have no more than 5 products
-
-Given('codebase is version 1', function () {
-    console.log('orders', orders);
-    // codebaseVesrion = version;
-    // callback(null, 'pending'); // callback is the original way of dealing with non-blocking asynchronous operations in Node.js 
-});
-Given('user is type basic', function() {
-    user = new User('basic')
+Given('a cart has {int} products', function(startQuantity) {
+    // user = new User('basic')
     // callback(null, 'pending');
+    cart.quan = startQuantity;
 });
-When('user adds product to cart', function (callback) {
+When('I add an item to the cart', function () {
     // cart.addProduct(product)
-    callback(null, 'pending');
+    // callback(null, 'pending');
+    cart.quan += 1;
 });
-Then('cart should have at least 1 products', function (expected) {
-    callback(null, 'pending');
-});
-Then('cart should have no more than 5 products', function (expected) {
-    callback(null, 'pending');
+Then('I should see {string}', function (expected) {
+    // callback(null, 'pending');
+    if (cart.quan <= 5) {
+        var message = "Success";
+        assert.equal(message, expected);
+    } else {
+        var message = "Failed";
+        assert.equal(message, expected);
+    }
 });
