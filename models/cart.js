@@ -1,19 +1,20 @@
 class Cart {
     // store entire product objects, not just ids, as per schema.
-    // product min 1, max 5
-    products = []; 
+    quantity = 0;
 
-    // constructor(userId, codebaseVersion) {
-    //     this.userId = userId;
-    //     this.codebaseVersion = codebaseVersion;
-    // }
+    constructor(startingQuantity) {
+        // this.userId = userId;
+        this.products = [];
+        this.quantity = startingQuantity;
+        // this.codebaseVersion = codebaseVersion;
+    }
 
     addProduct(product) {
         this.products.push(product);
     }
 
-    getProductCount() {
-        return this.products.length;
+    addItem() {
+        this.quantity += 1;
     }
 }
 
