@@ -34,4 +34,4 @@ if (!fs.existsSync('./data/companies.json')){
     });
 }
 
-module.export = User;
+module.export = Company;

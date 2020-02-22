@@ -2,14 +2,8 @@ class Order {
 
     constructor(startQuantity) {
         // this.userId = userId;
-        // this.products = [];
-        // this.productsQuantity = 0;
-        this.quantity = startQuantity;
         // this.codebaseVersion = codebaseVersion;
-    }
-
-    addProduct(product) {
-        this.products.push(product);
+        this.quantity = startQuantity;
     }
 
     addItem() {
