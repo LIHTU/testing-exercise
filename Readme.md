@@ -6,3 +6,7 @@ cucumber-js exits with status 1 if there are any undefined / pending / failed / 
 In these cases you'll get verbose output `npm ERR! code ELIFECYCLE...` 
 
 To run Cucumber tests from bash: `./node_modules/.bin/cucumber-js ./features/lessThan.feature ./steps/math.js`
+
+## Cucumber gotchyas
+Error: function timed out, ensure the callback is executed within 5000 milliseconds
+When this occurs in the Given() step, make sure you include 2 params...?
