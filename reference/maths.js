@@ -20,7 +20,6 @@ let answer = 0;
 //     callback(null, 'pending');
 // });
 
-
 // Finished example step
 Given('the numbers {int} and {int}', function (x, y) {
     calculator = new Calculator(x, y);

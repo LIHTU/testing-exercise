@@ -7,7 +7,6 @@ const orders = require('../data/orders.json');
 let order; 
 
 Given('a cart has {int} products', function(startQuantity) {
-    // user = new User('basic')
     order = new Order(startQuantity);
 });
 When('I add an item to the cart', function () {
