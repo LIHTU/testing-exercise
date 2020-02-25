@@ -1,1 +1,10 @@
-{"companies":[{"codebaseVersion":"1.0","id":0},{"codebaseVersion":"2.0","id":1}]}
+[
+    {
+        "codebaseVersion": "1",
+        "id": 1
+    },
+    {
+        "codebaseVersion": "2",
+        "id": 2
+    }
+]

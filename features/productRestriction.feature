@@ -1,6 +1,7 @@
 Feature: Restrict products by company
     In version 2 of the software users can add products to their carts
     only if the products belong to the company that the user belongs to.
+
     Scenario Outline: Users can only order products that belong to their own company.
         Given a user places an order on codebase version 2
         And a company exists on codebase version 2
