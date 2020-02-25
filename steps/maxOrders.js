@@ -38,32 +38,3 @@ Then('they should see {string}', function (expected) {
         assert.equal(successMsg, expected);
     }
 });
-
-// class UserOrdersCollection {
-//     constructor(count){
-//         this.count = count;
-//     }
-//     printCount() {
-//         console.log('count', this.count);
-//     }
-// }
-
-//Undefined. Implement with the following snippet:
-
-// Given('a user has placed <prevOrdersCount> orders', function (count) {
-//     // Write code here that turns the phrase above into concrete actions
-//     ordersCount = new UserOrdersCollection(count);
-// });
-//Error: function timed out, ensure the callback is executed within 5000 milliseconds
-
-
-// Given('a user has placed {int} orders', function(count, callback) {
-//     ordersCount = count;
-// });
-// Undefined. Implement with the following snippet:
-
-// Given('a user has placed <prevOrdersCount> orders', function (count) {
-//     ordersCount = count;
-//     console.log(ordersCount);
-// });
-// Error: function timed out, ensure the callback is executed within 5000 milliseconds
