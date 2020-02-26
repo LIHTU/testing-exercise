@@ -76,8 +76,15 @@
         "codebaseVersion": 1
     },
     {
-        "name": "User 3 first order",
+        "name": "Too few products in the cart",
         "id": 6,
+        "userId": 2,
+        "products": [],
+        "codebaseVersion": 1
+    },
+    {
+        "name": "User 3 first order",
+        "id": 7,
         "userId": 3,
         "products": [
             {
@@ -89,7 +96,7 @@
     },
     {
         "name": "User 3 2nd order",
-        "id": 6,
+        "id": 8,
         "userId": 3,
         "products": [
             {
@@ -101,7 +108,7 @@
     },
     {
         "name": "User 3 3rd order",
-        "id": 6,
+        "id": 9,
         "userId": 3,
         "products": [
             {
@@ -113,7 +120,7 @@
     },
     {
         "name": "User 3 4th order (too many)",
-        "id": 6,
+        "id": 10,
         "userId": 3,
         "products": [
             {
