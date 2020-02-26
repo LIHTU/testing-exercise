@@ -1,6 +1,6 @@
 [
     {
-        "name": "2 products",
+        "name": "One product from a different company",
         "id": 1,
         "userId": 1,
         "products": [
@@ -13,19 +13,40 @@
                 "sku": "gre-md-bts"
             }
         ],
-        "codebaseVersion": 1
+        "codebaseVersion": 2
     },
     {
-        "name": "0 products",
-        "id": 2,
-        "userId": 1,
-        "products": [],
-        "codebaseVersion": 1
-    },
-    {
-        "name": "6 products",
+        "name": "2 products from the users company",
         "id": 3,
         "userId": 1,
+        "products": [
+            {
+                "id": 1,
+                "sku": "gre-sm-bts"
+            },
+            {
+                "id": 3,
+                "sku": "red-md-bts"
+            }
+        ],
+        "codebaseVersion": 2
+    },
+    {
+        "name": "one product from another company",
+        "id": 4,
+        "userId": 2,
+        "products": [
+            {
+                "id": 1,
+                "sku": "gre-sm-bts"
+            }
+        ],
+        "codebaseVersion": 2
+    },
+    {
+        "name": "Too many products in the cart",
+        "id": 5,
+        "userId": 2,
         "products": [
             {
                 "id": 1,
@@ -37,67 +58,19 @@
             },
             {
                 "id": 3,
-                "sku": "gre-lg-bts"
+                "sku": "red-md-bts"
             },
             {
                 "id": 4,
-                "sku": "rd-sm-bts"
+                "sku": "blk-sm-bts"
             },
             {
                 "id": 5,
-                "sku": "rd-md-bts"
+                "sku": "prpl-md-bts"
             },
             {
                 "id": 6,
-                "sku": "-lg-bts"
-            }
-        ],
-        "codebaseVersion": 1
-    },
-    {
-        "name": "1st 1 product order for user 2",
-        "id": 4,
-        "userId": 2,
-        "products": [
-            {
-                "id": 1,
-                "sku": "gre-sm-bts"
-            }
-        ],
-        "codebaseVersion": 1
-    },
-    {
-        "name": "2nd 1 product order for user 2",
-        "id": 4,
-        "userId": 2,
-        "products": [
-            {
-                "id": 1,
-                "sku": "gre-sm-bts"
-            }
-        ],
-        "codebaseVersion": 1
-    },
-    {
-        "name": "3rd 1 product order for user 2",
-        "id": 4,
-        "userId": 2,
-        "products": [
-            {
-                "id": 1,
-                "sku": "gre-sm-bts"
-            }
-        ],
-        "codebaseVersion": 1
-    },
-    {
-        "name": "4th 1 product order for user 2",
-        "id": 4,
-        "userId": 2,
-        "products": [
-            {
-                "id": 1,
-                "sku": "gre-sm-bts"
+                "sku": "yel-sm-bts"
             }
         ],
         "codebaseVersion": 1

@@ -1,7 +1,7 @@
 var fs = require('fs');
 const _ = require('underscore');
 // classes 
-var Order = require('../models/order.js');
+var Order = require('../../models/order.js');
 // data
 const ordersData = require("../data/orders.json");
 const users = require("../data/users.json");
