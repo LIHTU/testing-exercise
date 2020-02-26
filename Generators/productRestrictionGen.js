@@ -24,7 +24,7 @@ Assumption 1: only verify product restriction by company if order codebase versi
 Ignore order's user's company's codebase version.
 Also ignore order's product's company's codebase version.
 
-Assumption 2: Codebase vesrion 2 should only verify user company and product company agree.  It should not also handle 
+Assumption 2: Codebase version 2 should only verify user company and product company agree.  It should not also handle 
 cart item and order limits that version 1 handles.
 */
 
@@ -33,24 +33,23 @@ ordersData.forEach(function(order) {
 
     // create order object to implement class
     // This shows that we're using our application's actuall business logic in creating the test and determing the results.
+    // create order with no products
     var myOrder = new Order(order.id, order.userId, order.codebaseVersion);
 
-    // start building a flat object for each product in the order to populate the feature file examples table.
-    // x products in 3 orders on version 2 should result in x rows. (in our case 5 rows).
-    var flatOrder = order;
+    // x number of products in 3 orders on version 2 should result in x rows in the examples table in the feature file. (in our case 5 rows).
 
-    // todo factor out flat order object.
-    flatOrder.userCompanyId = _.findWhere(users, {id: flatOrder.userId}).company.id;
-
-    flatOrder.products.forEach(function(product) {
-        flatOrder.productCompanyId = _.findWhere(productCompanies, {productId: product.id}).companyId;
+    var userCompanyId = _.findWhere(users, {id: order.userId}).company.id;
+    console.log('myOrder', myOrder);
+    order.products.forEach(function(product) {
+        var productCompanyId = _.findWhere(productCompanies, {productId: product.id}).companyId;
         try {
-            myOrder.addProductToOrder(product, flatOrder.userCompanyId);
+            // add order's products one by one.
+            myOrder.addProductToOrder(product, userCompanyId);
             // if no error thrown
-            fText += "\t\t\t| "+flatOrder.userCompanyId+"\t\t\t\t| "+flatOrder.productCompanyId+"\t\t\t\t\t| 'Item added to cart!'                                           |\n"
+            fText += "\t\t\t| "+userCompanyId+"\t\t\t\t| "+productCompanyId+"\t\t\t\t\t| 'Item added to cart!'                                           |\n"
         } catch (err) {
             if (err == "product restricted") {
-                fText += "\t\t\t| "+flatOrder.userCompanyId+"\t\t\t\t| "+flatOrder.productCompanyId+"\t\t\t\t\t| 'Sorry. You can only add items from your company to your cart.' |\n"
+                fText += "\t\t\t| "+userCompanyId+"\t\t\t\t| "+productCompanyId+"\t\t\t\t\t| 'Sorry. You can only add items from your company to your cart.' |\n"
             } else {
                 console.log('err', err); // print uncaught errors
             }
