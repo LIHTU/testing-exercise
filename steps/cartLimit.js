@@ -7,7 +7,8 @@ const orders = require('../data/orders.json');
 let order; 
 
 Given('a cart has {int} products', function(startQuantity) {
-    order = new Order(startQuantity);
+    order = new Order();
+    order.setQuantity(startQuantity);
 });
 When('I add an item to the cart', function () {
     order.addItem();

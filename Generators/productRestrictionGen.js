@@ -1,7 +1,7 @@
 var fs = require('fs');
 const _ = require('underscore');
 // classes 
-// var Order = require('../models/order.js');
+var Order = require('../models/order.js');
 // data
 const ordersData = require("../data/orders.json");
 const productCompanies = require("../data/productCompany.json");
@@ -18,7 +18,7 @@ fText += "\t\tWhen a user adds a product with <productCompanyId> to their cart\n
 fText += "\t\tThen the alert message should be <message>\n";
 fText += "\t\tExamples:\n";
 // TODO: maybe use tabs here. 🔻
-fText += "\t\t\t| userCompanyId | productCompanyId | message                                                         |\n";
+fText += "\t\t\t| userCompanyId | productCompanyId\t| message                                                         |\n";
 
 // TODO: determine if you want to utilize user, company, product classes.
 // if not, explain why.
@@ -27,29 +27,6 @@ class Company {
     constructor(id, codebaseVersion) {
         this.codebaseVersion = codebaseVersion;
         this.id = id;
-    }
-}
-
-class Order {
-    products = [];
-
-    constructor(id, userId, codebaseVersion) {
-        this.id = id;
-        this.userId = userId;
-        this.codebaseVersion = codebaseVersion;
-    }
-
-    // "add to cart"
-    addProductToOrder(product, userCompanyId) {
-        if (this.codebaseVersion == 1) {
-            this.products.push(product);
-        } else {
-            // get product company id
-            let productCompanyId = _.findWhere(productCompanies, { productId: product.id}).companyId;
-            if (productCompanyId != userCompanyId) {
-                throw("product restricted");
-            }
-        }
     }
 }
 
@@ -72,19 +49,21 @@ ordersData.forEach(function(order) {
     // start building a flat object for each product in the order to populate the feature file examples table.
     // x products in 3 orders on version 2 should result in x rows. (in our case 5 rows).
     var flatOrder = order;
+
+    // todo factor out flat order object.
     flatOrder.userCompanyId = _.findWhere(users, {id: flatOrder.userId}).company.id;
 
     flatOrder.products.forEach(function(product) {
         flatOrder.productCompanyId = _.findWhere(productCompanies, {productId: product.id}).companyId;
-
-        // TODO: makes string concat more readable.
         try {
             myOrder.addProductToOrder(product, flatOrder.userCompanyId);
             // if no error thrown
-            fText += "\t\t\t| "+flatOrder.userCompanyId+"             | "+flatOrder.productCompanyId+"                | 'Item added to cart!'                                           |\n"
+            fText += "\t\t\t| "+flatOrder.userCompanyId+"\t\t\t\t| "+flatOrder.productCompanyId+"\t\t\t\t\t| 'Item added to cart!'                                           |\n"
         } catch (err) {
             if (err == "product restricted") {
-                fText += "\t\t\t| "+flatOrder.userCompanyId+"             | "+flatOrder.productCompanyId+"                | 'Sorry. You can only add items from your company to your cart.' |\n"
+                fText += "\t\t\t| "+flatOrder.userCompanyId+"\t\t\t\t| "+flatOrder.productCompanyId+"\t\t\t\t\t| 'Sorry. You can only add items from your company to your cart.' |\n"
+            } else {
+                console.log('err', err);
             }
         }
     })

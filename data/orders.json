@@ -74,5 +74,53 @@
             }
         ],
         "codebaseVersion": 1
+    },
+    {
+        "name": "User 3 first order",
+        "id": 6,
+        "userId": 3,
+        "products": [
+            {
+                "id": 1,
+                "sku": "gre-sm-bts"
+            }
+        ],
+        "codebaseVersion": 1
+    },
+    {
+        "name": "User 3 2nd order",
+        "id": 6,
+        "userId": 3,
+        "products": [
+            {
+                "id": 1,
+                "sku": "gre-sm-bts"
+            }
+        ],
+        "codebaseVersion": 1
+    },
+    {
+        "name": "User 3 3rd order",
+        "id": 6,
+        "userId": 3,
+        "products": [
+            {
+                "id": 1,
+                "sku": "gre-sm-bts"
+            }
+        ],
+        "codebaseVersion": 1
+    },
+    {
+        "name": "User 3 4th order (too many)",
+        "id": 6,
+        "userId": 3,
+        "products": [
+            {
+                "id": 1,
+                "sku": "gre-sm-bts"
+            }
+        ],
+        "codebaseVersion": 1
     }
 ]

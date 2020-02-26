@@ -1,22 +1,38 @@
+const _ = require('underscore');
+const productCompanies = require("../data/productCompany.json");
+
 class Order {
 
-    constructor(startQuantity) {
-        // this.userId = userId;
-        // this.codebaseVersion = codebaseVersion;
-        this.quantity = startQuantity;
+    products = [];
+    quantity = 0;
+
+    constructor(id, userId, codebaseVersion) {
+        this.id = id;
+        this.userId = userId;
+        this.codebaseVersion = codebaseVersion;
+    }
+
+    setQuantity(quantity){
+        this.quantity = quantity;
+    }
+
+    // "add to cart"
+    addProductToOrder(product, userCompanyId) {
+        console.log('adding prod')
+        if (this.codebaseVersion == 1) {
+            this.products.push(product);
+        } else {
+            // get product company id
+            let productCompanyId = _.findWhere(productCompanies, { productId: product.id}).companyId;
+            if (productCompanyId != userCompanyId) {
+                throw("product restricted");
+            }
+        }
     }
 
     addItem() {
         this.quantity += 1;
     }
-}
-
-const orderIdGen = OrderIdGenerator();
-
-function* OrderIdGenerator() {
-    var i = 0;
-    while (true)
-        yield i++;
 }
 
 module.exports = Order;

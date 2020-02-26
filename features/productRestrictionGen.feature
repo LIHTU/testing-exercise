@@ -7,9 +7,9 @@ Feature: Restrict products by company
 		When a user adds a product with <productCompanyId> to their cart
 		Then the alert message should be <message>
 		Examples:
-			| userCompanyId | productCompanyId | message                                                         |
-			| 1             | 1                | 'Item added to cart!'                                           |
-			| 1             | 2                | 'Sorry. You can only add items from your company to your cart.' |
-			| 1             | 1                | 'Item added to cart!'                                           |
-			| 1             | 1                | 'Item added to cart!'                                           |
-			| 2             | 1                | 'Sorry. You can only add items from your company to your cart.' |
+			| userCompanyId | productCompanyId	| message                                                         |
+			| 1				| 1					| 'Item added to cart!'                                           |
+			| 1				| 2					| 'Sorry. You can only add items from your company to your cart.' |
+			| 1				| 1					| 'Item added to cart!'                                           |
+			| 1				| 1					| 'Item added to cart!'                                           |
+			| 2				| 1					| 'Sorry. You can only add items from your company to your cart.' |
