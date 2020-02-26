@@ -44,7 +44,7 @@
         "codebaseVersion": 2
     },
     {
-        "name": "Too many products in the cart",
+        "name": "Six products in the cart (too many)",
         "id": 5,
         "userId": 2,
         "products": [
@@ -76,14 +76,14 @@
         "codebaseVersion": 1
     },
     {
-        "name": "Too few products in the cart",
+        "name": "Too few products in the cart (0)",
         "id": 6,
         "userId": 2,
         "products": [],
         "codebaseVersion": 1
     },
     {
-        "name": "User 3 first order",
+        "name": "User 3 first order.  Also should pass cart limit of 1-5 products",
         "id": 7,
         "userId": 3,
         "products": [

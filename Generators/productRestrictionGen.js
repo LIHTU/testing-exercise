@@ -39,7 +39,6 @@ ordersData.forEach(function(order) {
     // x number of products in 3 orders on version 2 should result in x rows in the examples table in the feature file. (in our case 5 rows).
 
     var userCompanyId = _.findWhere(users, {id: order.userId}).company.id;
-    console.log('myOrder', myOrder);
     order.products.forEach(function(product) {
         var productCompanyId = _.findWhere(productCompanies, {productId: product.id}).companyId;
         try {

@@ -1,10 +1,10 @@
 const _ = require('underscore');
 const productCompanies = require("../data/productCompany.json");
+const users = require("../data/users.json");
 
 class Order {
 
     products = [];
-    quantity = 0;
 
     constructor(id, userId, codebaseVersion) {
         this.id = id;
@@ -12,15 +12,18 @@ class Order {
         this.codebaseVersion = codebaseVersion;
     }
 
-    setQuantity(quantity){
-        this.quantity = quantity;
+    setProductCount(quantity) {
+        this.products.length = quantity;
     }
 
     // "add to cart"
     addProductToOrder(product, userCompanyId) {
-        console.log('adding prod')
         if (this.codebaseVersion == 1) {
-            this.products.push(product);
+            if (!product) {
+                this.products.length += 1;
+            } else {
+                this.products.push(product);
+            }
         } else {
             // get product company id
             let productCompanyId = _.findWhere(productCompanies, { productId: product.id}).companyId;
@@ -30,8 +33,18 @@ class Order {
         }
     }
 
-    addItem() {
-        this.quantity += 1;
+    checkout() {
+        if (this.userId) {
+            var userType = _.find(users, {id: this.userId}).type;
+        }
+        if (this.products.length == 0) {
+            throw('no items');
+        } else if (userType == "super") {
+            throw("supers can't checkout");
+        } 
+        // else if (userOrdersCount >= 5) {
+        //     // would need to track placed orders
+        // }
     }
 }
 
