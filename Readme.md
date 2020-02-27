@@ -19,4 +19,5 @@ Then run the cucumber tests to see the results.
 
 ## How to run the cucumber tests
 In the top level directory run:
+`npm install`
 `npm run cucumber`
